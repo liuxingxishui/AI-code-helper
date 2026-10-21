@@ -1,4 +1,4 @@
-package com.yupi.aicodehelper.ai.listener;
+package org.example.aicodehelper.ai.listener;
 
 import dev.langchain4j.model.chat.listener.ChatModelErrorContext;
 import dev.langchain4j.model.chat.listener.ChatModelListener;

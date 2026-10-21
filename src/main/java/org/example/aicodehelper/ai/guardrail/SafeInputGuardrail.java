@@ -1,4 +1,28 @@
 package org.example.aicodehelper.ai.guardrail;
 
-public class SafeInputGuardrail {
+import dev.langchain4j.data.message.UserMessage;
+import dev.langchain4j.guardrail.InputGuardrail;
+import dev.langchain4j.guardrail.InputGuardrailResult;
+
+import java.util.Set;
+
+public class SafeInputGuardrail implements InputGuardrail {
+
+    // 声明一个所有对象共享、不可被重新赋值、不允许重复的敏感词集合
+    private static final Set<String> sensitiveWords = Set.of("kill", "evil");
+
+    @Override
+    public InputGuardrailResult validate(UserMessage userMessage) {
+        // 获取用户输入并转换为小写以确保大小写不敏感
+        String inputText = userMessage.singleText().toLowerCase();
+        // 使用正则表达式分割输入式分割输文本为单词
+        String[] words = inputText.split("\\W+");
+        // 遍历所有单词，检查是否存在敏感词
+        for (String word : words) {
+            if (sensitiveWords.contains(word)) {
+                return fatal("Sensitive word detected: " + word);
+            }
+        }
+        return success();
+    }
 }

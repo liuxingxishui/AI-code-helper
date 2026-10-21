@@ -31,3 +31,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node / 前端 ###
+node_modules/
+aicodehelper-frontend/dist/
+
+### 个人文件（不随仓库上传） ###
+参考README.md
+杨正驰*.pdf
+简历*.pdf
+*-重写.md
+项目技术栈.md
+项目启动流程.md
+项目描述.md
+IDEA启动操作流程.md
+illust_*.jpg
+
