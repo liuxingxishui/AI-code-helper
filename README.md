@@ -1,4 +1,4 @@
-# 🤖 AI 编程小助手 - LangChain4j 实战项目
+# 🤖 AI 编程学习与求职辅导助手
 
 > 基于 LangChain4j + Kimi K2.6 的 AI 智能编程学习与求职辅导机器人
 
